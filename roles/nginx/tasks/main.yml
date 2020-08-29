@@ -1,0 +1,15 @@
+---
+- name: Update cache repositories and install Nginx
+  apt:
+    name: nginx
+    update_cache: true
+
+- name: Change nginx directory permission
+  file:
+    path: /etc/nginx/nginx.conf
+    mode: 0750
+
+- name: start nginx
+  service:
+    name: nginx
+    state: started
