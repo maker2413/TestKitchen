@@ -91,11 +91,15 @@ rbenv rehash
 gem install bundler
 ```
 
-## Install kitchen-terraform
+## Install TestKitchen and plugins
 ```
 bundle install
 ```
-This command will install the bundle specified in Gemfile
+This command will install the bundle specified in `Gemfile`
+### Initialize TestKitchen
+```
+kitchen init
+```
 
 ## awscli is also required for this repo
 ### If awscli is not setup:
