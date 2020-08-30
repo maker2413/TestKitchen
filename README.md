@@ -5,6 +5,7 @@ Playing around with test kitchen
 ```
 sudo apt install python3-pip
 ```
+
 ## pyenv is required for this repo
 ### If pyenv is not setup:
 ```
@@ -82,7 +83,19 @@ tfenv use 0.13.1
 ```
 rbenv install 2.7.1
 rbenv local 2.7.1
+rbenv rehash
 ```
+
+## Install bundler
+```
+gem install bundler
+```
+
+## Install kitchen-terraform
+```
+bundle install
+```
+This command will install the bundle specified in Gemfile
 
 ## awscli is also required for this repo
 ### If awscli is not setup:
