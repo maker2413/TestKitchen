@@ -81,7 +81,8 @@ tfenv use 0.13.1
 ### Ruby:
 ```
 rbenv install 2.7.1
-
+rbenv local 2.7.1
+```
 
 ## awscli is also required for this repo
 ### If awscli is not setup:
