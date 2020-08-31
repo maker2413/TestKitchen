@@ -1,0 +1,20 @@
+---
+- name: Update caches repository
+  apt:
+    update_cache: true
+
+- name: Add gpg key for NodeJS LTS
+  apt_key:
+    url: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
+    state: present
+
+- name: Add the NodeJS LTS repo
+  apt_repository:
+    repo: "deb https://deb.nodesource.com/node_{{ NODEJS_VERSION }}.x {{ ansible_distribution_release }} main"
+    state: present
+    update_cache: true
+
+- name: Install Node.js
+  apt:
+    name: nodejs
+    state: present

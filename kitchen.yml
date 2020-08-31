@@ -1,0 +1,40 @@
+---
+driver:
+  name: ec2
+  aws_ssh_key_id: kitchensquids
+  region: us-west-2
+  subnet_id: subnet-0f9f4971177ba090f
+  iam_profile_name: SquidsEC2Role
+  instance_type: t2.micro
+
+transport:
+  ssh_key: /home/ethan/.ssh/kitchensquids
+  connection_timeout: 10
+  connectoin_retries: 5
+  username: ubuntu
+
+platforms:
+  - name: rhel-8
+    driver:
+      image_id: ami-02f147dfb8be58a10
+      block_device_mappings:
+        - device_name: /dev/sdb
+          ebs:
+            volume_type: gp2
+            volume_size: 8
+            delete_on_termination: true
+    transport:
+      username: ec2-user
+  - name: ubuntu-16.04
+
+provisioner:
+  name: ansible_playbook
+  hosts: test-kitchen
+  playbook: ./playbooks/nginx_nodejs.yml
+
+suites:
+  - name: default
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
