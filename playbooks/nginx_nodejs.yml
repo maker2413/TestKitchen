@@ -1,5 +1,9 @@
 ---
 - hosts: all
   become: true
+  remote_user: ec2-user
   vars:
     NODEJS_VERSION: 8
+
+  roles:
+    nodejs
