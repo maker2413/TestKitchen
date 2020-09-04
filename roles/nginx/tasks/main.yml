@@ -1,8 +1,8 @@
 ---
 - name: Update cache repositories and install Nginx
-  apt:
+  package:
     name: nginx
-    update_cache: true
+    state: present
 
 - name: Change nginx directory permission
   file:

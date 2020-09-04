@@ -6,4 +6,5 @@
     NODEJS_VERSION: 8
 
   roles:
-    nodejs
+    - nginx
+    - nodejs
