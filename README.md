@@ -9,7 +9,7 @@ sudo apt install python3-pip
 ## pyenv is required for this repo
 ### If pyenv is not setup:
 ```
-git clone https://github.com/pyenv/pyenv.git ~/.tfenv
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 ```
 ### Add bin files to PATH
 ```
@@ -76,8 +76,8 @@ pip install -r requirements.txt
 ```
 ### Terraform:
 ```
-tfenv install 0.13.1
-tfenv use 0.13.1
+tfenv install 0.13.2
+tfenv use 0.13.2
 ```
 ### Ruby:
 ```
