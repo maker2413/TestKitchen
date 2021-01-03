@@ -9,7 +9,7 @@ sudo apt install python3-pip
 ## pyenv is required for this repo
 ### If pyenv is not setup:
 ```
-git clone https://github.com/pyenv/pyenv.git ~/.tfenv
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 ```
 ### Add bin files to PATH
 ```
@@ -18,6 +18,10 @@ echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/< .zshrc|.bashrc >
 ### Or symlink bin files to /usr/local/bin
 ```
 ln -s ~/.pyenv/bin/* /usr/local/bin/
+```
+### Install the virtualenv plugin
+```
+git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 ```
 ### Add the following to your .zshrc or .bashrc
 ```
